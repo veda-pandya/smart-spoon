@@ -20,7 +20,7 @@
  *
  */
 
-import ModalView from "./ModalView.js";
+import ModalView from "./modalView.js";
 
 //Import utilities
 import { getIngredientMarkup, formatNutrientLabel, numToNearestFraction } from "../viewUtils/featureSpecific/recipeDetailsModalUtils.js";
