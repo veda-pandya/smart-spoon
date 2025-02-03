@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An app that helps users find recipes based on ingredients they have and plan weekly meals." />
+    <title>Recipe Planner - Your App Name</title>
+
+    <!-- External CSS, Fonts and Icons -->
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+
+    <!-- Import Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.skypack.dev/flatpickr/dist/flatpickr.min.css" />
+  </head>
+
+  <body>
+    <!-- Navbar (navBarView) -->
+    <header class="header">
+      <nav class="u-flex-space-between header__navbar">
+        <img class="header__logo" src="images/official_smartSpoon_logo-removebg.png" alt="SmartSpoon logo" />
+        <div class="header__links">
+          <a href="#" data-view="home" class="header__navbar-link header__navbar-link--active">Home</a>
+          <a href="#" data-view="browse" class="header__navbar-link">Browse Recipes</a>
+          <a href="#" data-view="ingredients" class="header__navbar-link">Use My Ingredients</a>
+          <a href="#" data-view="book" class="header__navbar-link">My Recipe Book</a>
+          <a href="#" data-view="planner" class="header__navbar-link">Meal Planner</a>
+        </div>
+        <button class="u-icn-btn header__menu-btn" aria-label="Navigation menu">
+          <i class="fa fa-bars header__menu-btn-icn" aria-hidden="true"></i>
+        </button>
+      </nav>
+      <div class="header__dropdown-menu" inert>
+        <a href="#" data-view="home" class="header__navbar-link header__navbar-link--dropdown header__navbar-link--active" tabindex="-1">Home</a>
+        <a href="#" data-view="browse" class="header__navbar-link header__navbar-link--dropdown" tabindex="-1">Browse Recipes</a>
+        <a href="#" data-view="ingredients" class="header__navbar-link header__navbar-link--dropdown" tabindex="-1">Use My Ingredients</a>
+        <a href="#" data-view="book" class="header__navbar-link header__navbar-link--dropdown" tabindex="-1">My Recipe Book</a>
+        <a href="#" data-view="planner" class="header__navbar-link header__navbar-link--dropdown" tabindex="-1">Meal Planner</a>
+      </div>
+    </header>
+
+    
+    <main id="main-content">
+      <!-- MAIN PAGES -->
+      <!-- Home Page (homeView)-->
+      <section id="home" class="g-page-section landing-page">
+        <!--Hero Section-->
+        <section class="hero-section">
+          <img class="hero-section__logo" src="images/official_smartSpoon_logo.jpg" alt="SmartSpoon logo" />
+          <h1 class="hero-section__main-heading">Unleash Your Inner Chef.</h1>
+          <h2 class="hero-section__sub-heading">Get personalized recipe recommendations. Build your meal plan. Start cooking with ease.</h2>
+          <button class="primary-btn hero-section__btn">FIND RECIPES</button>
+        </section>
+
+        <!--Features Section-->
+        <section class="features-section">
+          <h3 class="g-landing-page-subheading">TAKE YOUR COOKING TO THE NEXT LEVEL</h3>
+          <h2 class="g-landing-page-heading">All You Need, All In One Place.</h2>
+
+          <div class="features-section__card-container">
+            <div class="features-section__feature-card">
+              <img src="images/veggies.png" class="features-section__feature-img" alt="fresh veggies & ingredients" />
+              <h4 class="features-section__feature-title">Ingredient Based Recipes</h4>
+              <p class="features-section__feature-description">Get recipe suggestions based on what you have in your kitchen or browse our vast collection of recipes</p>
+            </div>
+            <div class="features-section__feature-card">
+              <img src="images/calendar.png" class="features-section__feature-img" alt="meal planner calendar icon" />
+              <h4 class="features-section__feature-title">Custom Meal Planning</h4>
+              <p class="features-section__feature-description">Plan meals, track macros, save plans, and add custom recipes to fit your preferences and nutrition goals.</p>
+            </div>
+            <div class="features-section__feature-card">
+              <img src="images/iphone_pic.png" class="features-section__feature-img" alt="smartphone icon" />
+              <h4 class="features-section__feature-title">Smart Cooking Mode
+                <span class="g-coming-soon">(Coming Soon!)</span>
+              </h4>
+              <p class="features-section__feature-description">Get hands free, step-by-step audio instructions & interactive cooking assistance while you cook.</p>
+            </div>
+          </div>
+        </section>
+
+        <!--Explore Recipes Section-->
+        <section class="explore-recipes-section">
+          <h3 class="g-landing-page-subheading">RECIPES FOR EVERY CRAVING, CUISINE & DIET</h3>
+          <h2 class="g-landing-page-heading">Explore a World of Flavors</h2>
+
+          <div class="explore-recipes-section__section-background">
+            <div class="explore-recipes-section__img-container">
+              <div class="explore-recipes-section__img-wrapper">
+                <img src="images/explore-recipes-asian-noodles.jpeg" class="explore-recipes-section__img" alt="asian noodles" />
+              </div>
+              <div class="explore-recipes-section__img-wrapper">
+                <img src="images/explore-recipes-spaghetti.avif" class="explore-recipes-section__img" alt="spaghetti" />
+              </div>
+              <div class="explore-recipes-section__img-wrapper">
+                <img src="images/explore-recipes-buddha-bowl.jpeg" class="explore-recipes-section__img" alt="Buddha bowl" />
+              </div>
+            </div>
+
+            <div class="explore-recipes-section__btn-container">
+              <button class="primary-btn explore-recipes-section__explore-btn">Explore Recipes</button>
+            </div>
+          </div>
+        </section>
+
+        <!--Call to Action Section-->
+        <section class="cta-section">
+          <div class="cta-section__container">
+            <div class="cta-section__text-container">
+              <h3 class="g-landing-page-subheading">COOK SMART, WASTE LESS</h3>
+              <h2 class="g-landing-page-heading">Join Now</h2>
+              <p class="cta-section__text">Delicious recipes using what you have in your fridge - at your fingertips.</p>
+              <button class="primary-btn cta-section__btn">Get Started</button>
+            </div>
+            <img src="images/cta-woman-cooking.avif" class="cta-section__img" alt="woman preparing food in the kitchen" />
+          </div>
+        </section>
+
+        <!--How it Works Section-->
+        <section class="how-it-works-section">
+          <h3 class="g-landing-page-subheading">FROM YOUR FRIDGE TO YOUR DINNER TABLE.</h3>
+          <h2 class="g-landing-page-heading">How it all Works</h2>
+
+          <div class="how-it-works-section__infographic-container">
+            <div class="how-it-works-section__step how-it-works-section__step--1">
+              <h4 class="how-it-works-section__step-heading">1. Start With What You Have</h4>
+              <p class="how-it-works-section__step-text"> Input the ingredients you have at home, and we'll suggest matching recipes. Add your favorites directly to your meal plan!</p>
+            </div>
+
+            <img src="images/pot_icon.png" alt="food cooking in pan" class="how-it-works-section__img how-it-works-section__img--pot-graphic" />
+
+            <img src="images/ingredients_icon.png" alt="fresh eggs and ingredients" class="how-it-works-section__img how-it-works-section__img--ingredients-graphic" />
+
+            <div class="how-it-works-section__step how-it-works-section__step--2">
+              <h4 class="how-it-works-section__step-heading">2. Discover Recipes You'll Love</h4>
+              <p class="how-it-works-section__step-text">Explore our vast recipe collection! Filter by cuisine, diet, nutrition, and more to discover the perfect meals. Add your favorites to your planner in a snap.</p>
+            </div>
+
+            <img src="images/calendar_icon.png" alt="calendar icon" class="how-it-works-section__img how-it-works-section__img--calendar-graphic" />
+
+            <div class="how-it-works-section__step how-it-works-section__step--3">
+              <h4 class="how-it-works-section__step-heading">3. Meal Plan Effortlessly</h4>
+              <p class="how-it-works-section__step-text"> Save favorites to your recipe book or add custom recipes. Track calories & macros, revisit past meal plans, and effortlessly add custom entries-all in one intuitive planning tool!</p>
+            </div>
+
+            <img src="images/list_icon.png" alt="shopping list icon" class="how-it-works-section__img how-it-works-section__img--list-graphic" />
+
+            <div class="how-it-works-section__step how-it-works-section__step--4">
+              <h4 class="how-it-works-section__step-heading">4. Smart Cooking Assistant
+                <span class="g-coming-soon">(Coming Soon!)</span>
+              </h4>
+              <p class="how-it-works-section__step-text">Enjoy seamless cooking with our hands-free virtual assistant that guides you through recipes with voice commands for an effortless, interactive experience.</p>
+            </div>
+          </div>
+        </section>
+
+        <!--Did You Know Section-->
+        <section class="did-you-know-section">
+          <h2 class="did-you-know-section__heading">Did You Know?</h2>
+          <p class="did-you-know-section__fact">The average household wastes about 30% of the food they buy.</p>
+          <p class="did-you-know-section__cta"> <span class="did-you-know-section__keyword">Plan</span> better. <span class="did-you-know-section__keyword">Save</span> money.   <span class="did-you-know-section__keyword">Reduce</span> waste. <span class="did-you-know-section__keyword">Use </span>Smartspoon.</p>
+        </section>
+
+        <!--Testimonials Section-->
+        <section class="testimonials-section">
+          <h3 class="g-landing-page-subheading">CHECK OUT WHAT OUR USERS HAVE TO SAY</h3>
+          <h2 class="g-landing-page-heading">Don't Take Our Word, Take Theirs</h2>
+          <div class="testimonials-section__slider-container">
+            <button class="u-icn-btn testimonials-section__navigation-btn testimonials-section__navigation-btn--previous-arrow" aria-label="Go to the previous testimonial">
+              <i class="bi bi-chevron-left testimonials-section__arrow testimonials-section__arrow--previous"></i>
+            </button>
+            <div class="testimonials-section__slider" data-index="0">
+              <div class="testimonials-section__testimonial testimonials-section__testimonial--active">
+                <div class="testimonials-section__img-wrapper">
+                  <img src="images/testimonial1.jpg" class="testimonials-section__img" alt="Katie C (Vegan Chef) stirring a pot" />
+                </div>
+                <div class="testimonials-section__testimonial-content">
+                  <blockquote class="testimonials-section__testimonial-text">
+                    As a vegan, it’s always challenging to find recipes that fit my dietary needs and nutrition goals, but this app makes it so easy. I can track my daily calories and macros and find recipes that align with my specific dietary restrictions. The app provides a full nutrition breakdown for each recipe which is amazing! The app has made it simple to stay on track with my nutrition without compromising on flavor!
+                  </blockquote>
+                  <cite class="testimonials-section__testimonial-author">KATIE C, VEGAN CHEF</cite>
+                </div>
+              </div>
+              <div class="testimonials-section__testimonial">
+                <div class="testimonials-section__img-wrapper">
+                  <img src="images/testimonial2.jpg" class="testimonials-section__img" alt="Devon K (Cooking Enthusiast) and family making pizza together" />
+                </div>
+                <div class="testimonials-section__testimonial-content">
+                  <blockquote class="testimonials-section__testimonial-text">
+                    I never thought meal planning could be this easy, especially with a family. This app has something for everyone—whether it’s finding new recipes to try or adding our own custom meals. We save time during the week by planning meals together and easily keeping track of what we need. The ability to save our favorite recipes means we can quickly access the ones we love. It’s made family mealtime simpler, healthier, and so much more enjoyable!
+                  </blockquote>
+                  <cite class="testimonials-section__testimonial-author">DEVON K, COOKING ENTHUSIAST & DAD</cite>
+                </div>
+              </div>
+              <div class="testimonials-section__testimonial">
+                <div class="testimonials-section__img-wrapper">
+                  <img src="images/testimonial3.jpg" class="testimonials-section__img" alt="Thomas Lee (working professional) chopping fruit" />
+                </div>
+                <div class="testimonials-section__testimonial-content">
+                  <blockquote class="testimonials-section__testimonial-text">
+                    This app has completely transformed how I approach meal planning! Cooking for one is tough because I often buy ingredients for a single recipe and end up with leftovers. But this app solves that problem by suggesting recipes I can make with what I already have at home. It’s saved me time, grocery trips, and I’m no longer throwing away ingredients! The weekly planner keeps me organized, and is a lifesaver for busy weeks!
+                  </blockquote>
+                  <cite class="testimonials-section__testimonial-author">THOMAS LEE, WORKING PROFESSIONAL</cite>
+                </div>
+              </div>
+            </div>
+            <button class="u-icn-btn testimonials-section__navigation-btn testimonials-section__navigation-btn--next-arrow" aria-label="Go to the next testimonial">
+              <i class="bi bi-chevron-right testimonials-section__arrow testimonials-section__arrow--next"></i>
+            </button>
+          </div>
+
+          <div class="testimonials-section__slider-dots">
+            <button class="testimonials-section__slider-dot testimonials-section__slider-dot--active" aria-label="Go to testimonial 1" aria-current="true"></button>
+            <button class="testimonials-section__slider-dot" aria-label="Go to testimonial 2"></button>
+            <button class="testimonials-section__slider-dot" aria-label="Go to testimonial 3"></button>
+          </div>
+        </section>
+      </section>
+
+      <!--Browse Recipes Based on Ingredients Available Page (IngredientSearchView)-->
+      <section id="ingredient-based-recipes" class="u-hidden g-page-section ingredient-search">
+        <section class="ingredient-search__input-ingredients-section">
+          <div class="ingredient-search__input-ingredients-container">
+            <h2 class="g-page-title ingredient-search__page-title">What ingredients do you have at home?</h2>
+
+            <div class="error-message error-message--search-input ingredient-search__error-message"></div>
+
+            <div class="search-bar search-bar--ingredients-page">
+              <label for="search-bar-ingredients-page" class="g-visually-hidden">Search for an ingredient:</label>
+              <i class="bi bi-search search-bar__search-icn" aria-hidden="true"></i>
+              <input id="search-bar-ingredients-page" type="text" class="search-bar__input search-bar__input--ingredients-page" placeholder="search ingredient (e.g. yogurt) and press enter..." />
+              <!-- Suggestions container -->
+              <ul class="u-hidden search-bar__suggestions-list">
+                <!-- Autocomplete uggestions are dynamically added here -->
+              </ul>
+            </div>
+
+            <div class="u-flex-gap-1rem ingredient-search__common-ingredients-container">
+              <button class="secondary-btn secondary-btn--less-padding ingredient-search__common-ingredient">milk</button>
+              <button class="secondary-btn secondary-btn--less-padding ingredient-search__common-ingredient">cheese</button>
+              <button class="secondary-btn secondary-btn--less-padding ingredient-search__common-ingredient">onion</button>
+              <button class="secondary-btn secondary-btn--less-padding ingredient-search__common-ingredient">tomato</button>
+              <button class="secondary-btn secondary-btn--less-padding ingredient-search__common-ingredient">carrot</button>
+              <button class="secondary-btn secondary-btn--less-padding u-optional ingredient-search__common-ingredient">potato</button>
+              <button class="secondary-btn secondary-btn--less-padding u-optional ingredient-search__common-ingredient">ketchup</button>
+              <button class="secondary-btn secondary-btn--less-padding u-optional ingredient-search__common-ingredient">bread</button>
+            </div>
+
+            <h3 class="ingredient-search__pantry-heading">My Virtual Pantry</h3>
+
+            <div class="ingredient-search__pantry">
+              <!-- Pantry ingredients are dynamically added here -->
+            </div>
+
+            <button class="primary-btn primary-btn--less-padding ingredient-search__view-results-btn">View Recipe Suggestions</button>
+          </div>
+        </section>
+
+        <section class="ingredient-search__suggested-recipes-section">
+          <h2 class="g-page-title">Your Personalized Recipe Suggestions</h2>
+          <!--Search results error field-->
+          <div class="error-message error-message--search-results"></div>
+          <!--Loading spinner-->
+          <div class="u-hidden g-spinner"></div>
+
+          <ul class="g-search-results-container ingredient-search__results-container">
+            <!-- Recipe result cards are dynamically added here -->
+          </ul>
+        </section>
+      </section>
+
+      <!--Browse All Recipes Page (BrowseRecipesView)-->
+      <section id="browse-all-recipes" class="u-hidden g-page-section recipe-search">
+        <div class="recipe-search__header">
+          <div class="recipe-search__action-btns">
+            <div class="recipe-search__filter-btn-container">
+              <button class="secondary-btn secondary-btn--less-padding recipe-search__filter-btn u-hidden">Filter Search Results</button>
+            </div>
+
+            <div class="recipe-search__browse-btn-container">
+              <button class="secondary-btn secondary-btn--less-padding recipe-search__browse-btn">Browse Recipe Collection</button>
+            </div>
+          </div>
+
+          <div class="recipe-search__title-container">
+            <h2 class="g-page-title">Browse Delicious Recipes for Your Meal Plan!</h2>
+
+            <div class="error-message error-message--search-input recipe-search__error-message"></div>
+
+            <div class="g-search-bar-container">
+              <div class="search-bar search-bar--browse-recipes-page">
+                <label for="search-bar-browse-recipes-page" class="g-visually-hidden">Search for a recipe :</label>
+                <i class="bi bi-search search-bar__search-icon" aria-hidden="true"></i>
+                <input id="search-bar-browse-recipes-page" type="text" class="search-bar__input search-bar__input--recipe-search-page" placeholder="search recipes (e.g. pancakes)" />
+                <!-- Suggestions container -->
+                <ul class="u-hidden search-bar__suggestions-list">
+                  <!-- autocomplete suggestions are dynamically added here -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="recipe-search__applied-filter-info"></div>
+        <!--Search results error field-->
+        <div class="error-message error-message--search-results"></div>
+        <!--Loading spinner-->
+        <div class="u-hidden g-spinner"></div>
+
+        <ul class="g-search-results-container recipe-search__results-container">
+          <!-- Recipe search result cards are dynamically added here -->
+        </ul>
+
+        <div class="recipe-search__go-to-planner-btn">
+          <button class="primary-btn primary-btn--less-padding recipe-search__meal-plan-btn">Meal Planner</button>
+        </div>
+      </section>
+
+      <!--My Recipe Book Page (RecipeBookView)-->
+      <section id="my-recipe-book" class="u-hidden g-page-section recipe-book">
+        <div class="recipe-book__header">
+          <div class="recipe-book__custom-recipe-btn-container">
+            <button class="primary-btn primary-btn--less-padding recipe-book__custom-recipe-btn">Add Custom Recipe</button>
+          </div>
+
+          <div class="recipe-book__title-container">
+            <h2 class="g-page-title">Your Recipe Book</h2>
+          </div>
+        </div>
+        <!--No recipes in recipe book message-->
+        <div class="u-hidden recipe-book__no-recipes-message">Looks like your recipe book is empty. Let’s fill it up with some tasty favorites! Find a recipe you love and bookmark it to add it here.</div>
+
+        <ul class="g-search-results-container recipe-book__results-container">
+          <!-- Recipe book recipe cards are dynamically added here -->
+        </ul>
+      </section>
+
+      <!-- Meal Planner Page (MealPlanView)-->
+      <section id="meal-planner" class="u-hidden g-page-section meal-planner">
+        <div class="u-flex-space-between meal-planner__header">
+          <h2 class="g-page-title g-page-title--no-margin">My Meal Planner</h2>
+          <div class="u-flex-gap-1rem week-selection meal-planner__week-selection">
+            <button class="u-icn-btn week-selection__arrow-btn week-selection__arrow-btn--previous" aria-label="Show previous week on calendar">
+              <i class="bi bi-chevron-left week-selection__arrow-icn"></i>
+            </button>
+            <p class="week-selection__text"><!--Example: Week of November 7, 2024--></p>
+            <button class="u-icn-btn week-selection__arrow-btn week-selection__arrow-btn--next" aria-label="Show next week on calendar">
+              <i class="bi bi-chevron-right week-selection__arrow-icn"></i>
+            </button>
+          </div>
+        </div>
+
+        <!--Meal plan calendar-->
+        <div class="meal-planner__calendar">
+          <!--Day 1: Monday-->
+          <section class="meal-planner__day-panel meal-planner__day-panel--mon" data-day="Mon">
+            <div class="meal-planner__date-container">
+              <h3 class="meal-planner__day-of-week">MON</h3>
+              <p class="meal-planner__date">Nov 15</p>
+            </div>
+
+            <div class="meal-planner__daily-nutrition-container">
+              <button class="meal-planner__daily-nutrition-dropdown" aria-expanded="false" aria-controls="daily-nutrition-macros" id="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--calories">
+                  Total Calories:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--calories">1200</span>
+                </p>
+                <i class="bi bi-chevron-down meal-planner__nutrition-dropdown-arrow"></i>
+              </button>
+              <div class="meal-planner__macros" id="daily-nutrition-macros" role="region" aria-labelledby="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--protein">
+                  Total Protein:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--protein">56g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--carbs">
+                  Total Carbs:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--carbs">30g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--fats">
+                  Total Fats:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--fats">12g</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--breakfast" data-meal="breakfast">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Breakfast</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a breakfast meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__breakfast-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--lunch" data-meal="lunch">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Lunch</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a lunch meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__lunch-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--snack" data-meal="snacks">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Snacks</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a snack meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__snacks-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--dinner" data-meal="dinner">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Dinner</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a dinner meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__dinner-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+          </section>
+
+          <!--Day 2: Tuesday-->
+          <section class="meal-planner__day-panel meal-planner__day-panel--tue" data-day="Tue">
+            <div class="meal-planner__date-container">
+              <h3 class="meal-planner__day-of-week">TUE</h3>
+              <p class="meal-planner__date">Nov 16</p>
+            </div>
+            <div class="meal-planner__daily-nutrition-container">
+              <button class="meal-planner__daily-nutrition-dropdown" aria-expanded="false" aria-controls="daily-nutrition-macros" id="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--calories">
+                  Total Calories:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--calories">1200</span>
+                </p>
+                <i class="bi bi-chevron-down meal-planner__nutrition-dropdown-arrow"></i>
+              </button>
+              <div class="meal-planner__macros" id="daily-nutrition-macros" role="region" aria-labelledby="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--protein">
+                  Total Protein:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--protein">56g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--carbs">
+                  Total Carbs:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--carbs">30g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--fats">
+                  Total Fats:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--fats">12g</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--breakfast" data-meal="breakfast">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Breakfast</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a breakfast meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__breakfast-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--lunch" data-meal="lunch">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Lunch</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a lunch meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__lunch-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--snack" data-meal="snacks">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Snacks</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a snack meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__snacks-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--dinner" data-meal="dinner">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Dinner</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a dinner meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__dinner-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+          </section>
+
+          <!--Day 3: Wednesday-->
+          <section class="meal-planner__day-panel meal-planner__day-panel--wed" data-day="Wed">
+            <div class="meal-planner__date-container">
+              <h3 class="meal-planner__day-of-week">WED</h3>
+              <p class="meal-planner__date">Nov 17</p>
+            </div>
+            <div class="meal-planner__daily-nutrition-container">
+              <button class="meal-planner__daily-nutrition-dropdown" aria-expanded="false" aria-controls="daily-nutrition-macros" id="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--calories">
+                  Total Calories:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--calories">1200</span>
+                </p>
+                <i class="bi bi-chevron-down meal-planner__nutrition-dropdown-arrow"></i>
+              </button>
+              <div class="meal-planner__macros" id="daily-nutrition-macros" role="region" aria-labelledby="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--protein">
+                  Total Protein:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--protein">56g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--carbs">
+                  Total Carbs:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--carbs">30g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--fats">
+                  Total Fats:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--fats">12g</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--breakfast" data-meal="breakfast">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Breakfast</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a breakfast meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__breakfast-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--lunch" data-meal="lunch">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Lunch</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a lunch meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__lunch-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--snack" data-meal="snacks">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Snacks</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a snack meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__snacks-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--dinner" data-meal="dinner">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Dinner</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a dinner meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__dinner-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+          </section>
+
+          <!--Day 4: Thursday-->
+          <section class="meal-planner__day-panel meal-planner__day-panel--thu" data-day="Thu">
+            <div class="meal-planner__date-container">
+              <h3 class="meal-planner__day-of-week">THU</h3>
+              <p class="meal-planner__date">Nov 18</p>
+            </div>
+            <div class="meal-planner__daily-nutrition-container">
+              <button class="meal-planner__daily-nutrition-dropdown" aria-expanded="false" aria-controls="daily-nutrition-macros" id="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--calories">
+                  Total Calories:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--calories">1200</span>
+                </p>
+                <i class="bi bi-chevron-down meal-planner__nutrition-dropdown-arrow"></i>
+              </button>
+              <div class="meal-planner__macros" id="daily-nutrition-macros" role="region" aria-labelledby="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--protein">
+                  Total Protein:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--protein">56g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--carbs">
+                  Total Carbs:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--carbs">30g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--fats">
+                  Total Fats:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--fats">12g</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--breakfast" data-meal="breakfast">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Breakfast</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a breakfast meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__breakfast-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--lunch" data-meal="lunch">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Lunch</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a lunch meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__lunch-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--snack" data-meal="snacks">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Snacks</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a snack meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__snacks-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--dinner" data-meal="dinner">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Dinner</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a dinner meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__dinner-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+          </section>
+
+          <!--Day 5: Friday-->
+          <section class="meal-planner__day-panel meal-planner__day-panel--fri" data-day="Fri">
+            <div class="meal-planner__date-container">
+              <h3 class="meal-planner__day-of-week">FRI</h3>
+              <p class="meal-planner__date">Nov 19</p>
+            </div>
+            <div class="meal-planner__daily-nutrition-container">
+              <button class="meal-planner__daily-nutrition-dropdown" aria-expanded="false" aria-controls="daily-nutrition-macros" id="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--calories">
+                  Total Calories:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--calories">1200</span>
+                </p>
+                <i class="bi bi-chevron-down meal-planner__nutrition-dropdown-arrow"></i>
+              </button>
+              <div class="meal-planner__macros" id="daily-nutrition-macros" role="region" aria-labelledby="daily-nutrition-toggle">
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--protein">
+                  Total Protein:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--protein">56g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--carbs">
+                  Total Carbs:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--carbs">30g</span>
+                </p>
+                <p class="meal-planner__daily-nutrient meal-planner__daily-nutrient--fats">
+                  Total Fats:
+                  <span class="meal-planner__daily-nutrition-total meal-planner__daily-nutrition-total--macro meal-planner__daily-nutrition-total--fats">12g</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="meal-planner__meal-section meal-planner__meal-section--breakfast" data-meal="breakfast">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Breakfast</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a breakfast meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__breakfast-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--lunch" data-meal="lunch">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Lunch</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a lunch meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__lunch-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--snack" data-meal="snacks">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Snacks</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a snack meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__snacks-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+            <div class="meal-planner__meal-section meal-planner__meal-section--dinner" data-meal="dinner">
+              <div class="u-flex-space-between meal-planner__meal-time-header">
+                <h4 class="meal-planner__meal-time-heading">Dinner</h4>
+                <button class="u-icn-btn add-entry-btn" aria-label="Add a dinner meal to calendar">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+              <ul class="meal-planner__dinner-meals">
+                <!-- meal entry list items are dynamically added here -->
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!--MODAL WINDOWS -->
+      <!--Shared Modal Overlay-->
+      <div class="u-hidden g-modal-overlay">
+        <!--Modal Window #1: Add Recipe Modal -->
+        <div id="addRecipeModal" class="u-hidden modal-window modal-window--generic modal-window--stacked add-recipe-modal">
+          <div class="modal-window__header">
+            <button class="u-icn-btn modal-window__close-modal-btn" aria-label="Close modal window">
+              <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+            </button>
+          </div>
+
+          <h3 class="modal-window__heading">
+            Schedule
+            <span class="add-recipe-modal__recipe-name"><!--Ex: Plant Based Mushroom Burger-->/span>
+            in Meal Plan
+          </h3>
+
+          <div class="error-message error-message--repeat-recipe"></div>
+
+          <form class="add-recipe-modal__form">
+            <fieldset class="u-fieldset add-recipe-modal__meal-inputs">
+              <legend class="modal-window__subheading">Select Date & Meal</legend>
+
+              <div class="add-recipe-modal__date-picker-container">
+                <label for="date-selection" class="g-visually-hidden">Select Date:</label>
+                <input type="date" class="add-recipe-modal__date-picker" id="date-selection" placeholder="mm/dd/yyyy" required />
+              </div>
+
+              <div class="u-invisible add-recipe-modal__secondary-inputs">
+                <label for="meal-time-dropdown" class="g-visually-hidden">Select which meal time you would like to add this recipe to:</label>
+                <select id="meal-time-select" class="dropdown">
+                  <option value="breakfast" class="u-long add-recipe-modal__breakfast-dropdown-option"><!--Ex: Breakfast (Current: Oatmeal & Greek Yogurt Parfait)--></option>
+                  <option value="breakfast" class="u-short">Breakfast</option>
+                  <option value="lunch" class="u-long add-recipe-modal__lunch-dropdown-option"><!--Ex: Lunch (Current: Margherita Pizza, 5 Layer Guacamole with Chips)--></option>
+                  <option value="lunch" class="u-short">Lunch</option>
+                  <option value="snacks" class="u-long add-recipe-modal__snacks-dropdown-option"><!--Ex: Snack (No current meal)--></option>
+                  <option value="snacks" class="u-short">Snack</option>
+                  <option value="dinner" class="u-long add-recipe-modal__dinner-dropdown-option"><!--Ex: Dinner (Current: 3 Cheese Lasagna)--></option>
+                  <option value="dinner" class="u-short">Dinner</option>
+                </select>
+
+                <div class="add-recipe-modal__servings-info">
+                  <div class="add-recipe-modal__servings-input">
+                    <label class="modal-window__text-input-label add-recipe-modal__num-servings-label">Number of Servings:</label>
+                    <input type="number" class="modal-window__text-input add-recipe-modal__num-servings" min="1" max="50" step="1" required />
+                  </div>
+                  <div class="add-recipe-modal__nutrition-info">
+                    <p class="add-recipe-modal__calories-info">
+                      Calories:
+                      <span class="add-recipe-modal__calories"><!--Ex: 25 calories--></span>
+                    </p>
+                    <p class="add-recipe-modal__protein-info">
+                      Protein:
+                      <span class="add-recipe-modal__protein"><!--Ex: 25g--></span>
+                    </p>
+                    <p class="add-recipe-modal__carbs-info">
+                      Carbs:
+                      <span class="add-recipe-modal__carbs"><!--Ex: 25g--></span>
+                    </p>
+                    <p class="add-recipe-modal__fats-info">
+                      Fats:
+                      <span class="add-recipe-modal__fats"><!--Ex: 25g--></span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="add-recipe-modal__action-btns">
+                  <div class="add-recipe-modal__add-meal-btn">
+                    <input type="radio" id="add-meal" name="meal-action" value="add" required />
+                    <label for="add-meal">Add Meal</label>
+                  </div>
+                  <div class="add-recipe-modal__replace-meal-btn">
+                    <input type="radio" id="replace-meal" name="meal-action" value="replace" required />
+                    <label for="replace-meal">Replace Meal</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="u-invisible modal-window__btn-large add-recipe-modal__submit-btn">Update Planner</button>
+          </form>
+        </div>
+
+        <!--Modal Window #2: Recipe Details Modal -->
+        <div id="recipeModal" class="u-hidden modal-window modal-window--recipe-page recipe-modal">
+          <div class="modal-window__container--recipe-page">
+            <div class="modal-window__header">
+              <button class="u-icn-btn modal-window__close-modal-btn" aria-label="Close modal window">
+                <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+              </button>
+            </div>
+
+            <h3 class="recipe-modal__heading"><!--Ex: Margharita Pizza with Capsicum & Onion--></h3>
+
+            <section class="recipe-modal__section recipe-modal__section--summary">
+              <div class="recipe-modal__img-container">
+                <img class="recipe-modal__img" src= "https://img.spoonacular.com/recipes/715495-556x370.jpg" alt="recipe" />
+              </div>
+
+              <div class="recipe-modal__quick-view">
+                <div class="u-flex-space-between recipe-modal__quick-view-header">
+                  <h4 class="g-page-subtitle">Quick View</h4>
+                  <button class="u-icn-btn recipe-modal__bookmark-btn" aria-label="Bookmark recipe">
+                    <i class="bi bi-bookmark recipe-modal__bookmark-icn"></i>
+                  </button>
+                </div>
+
+                <div class="recipe-modal__recipe-highlights">
+                  <div class="u-flex-gap-1rem recipe-modal__recipe-highlight">
+                    <i class="bi bi-clock recipe-modal__recipe-highlight-icn" aria-hidden="true"></i>
+                    <p class="recipe-modal__highlight" data-highlight="prepTime">
+                      <span class="recipe-modal__highlight-label">Cook Time:</span>
+                      <!--Ex: 40 minutes-->
+                    </p>
+                  </div>
+                  <div class="u-flex-gap-1rem recipe-modal__recipe-highlight">
+                    <i class="fa fa-globe recipe-modal__recipe-highlight-icn" aria-hidden="true"></i>
+                    <p class="recipe-modal__highlight" data-highlight="cuisine">
+                      <span class="recipe-modal__highlight-label">Cuisine:</span>
+                      <!--Ex: Italian-->
+                    </p>
+                  </div>
+                  <div class="u-flex-gap-1rem recipe-modal__recipe-highlight">
+                    <i class="fa fa-cutlery recipe-modal__recipe-highlight-icn" aria-hidden="true"></i>
+                    <p class="recipe-modal__highlight" data-highlight="mealType">
+                      <span class="recipe-modal__highlight-label">Meal Type:</span>
+                      <!--Ex: Dinner | Main Course -->
+                    </p>
+                  </div>
+                  <div class="u-flex-gap-1rem recipe-modal__recipe-highlight">
+                    <i class="bi bi-fire recipe-modal__recipe-highlight-icn" aria-hidden="true"></i>
+                    <p class="recipe-modal__calories"><!--Ex: 800 calories--></p>
+                  </div>
+                </div>
+
+                <div class="recipe-modal__dietary-preferences-container">
+                  <p class="recipe-modal__dietary-preference-statement">This recipe is:</p>
+                  <div class="u-flex-gap-1rem recipe-modal__dietary-preferences">
+                    <!--Ex: 
+                    <span class="recipe-modal__dietary-preference">vegetarian</span>
+                    <span class="recipe-modal__dietary-preference">vegan</span>
+                  -->
+                  </div>
+                </div>
+
+                <div class="u-flex-gap-1rem recipe-modal__quick-view-btns">
+                  <button class="primary-btn primary-btn--mini recipe-modal__add-to-planner-btn">Add to Meal Planner</button>
+                  <button class="primary-btn primary-btn--mini recipe-modal__assistant-btn" disabled>Virtual Cooking Assistant <span class="recipe-modal__coming-soon">(Coming Soon!)</span></button>
+                </div>
+              </div>
+            </section>
+
+            <section class="recipe-modal__section recipe-modal__section--ingredients">
+              <div class="u-flex-space-between recipe-modal__ingredients-header">
+                <h4 class="g-page-subtitle">Ingredients</h4>
+                <div class="u-flex-gap-1rem recipe-modal__num-servings-container">
+                  <button class="u-icn-btn recipe-modal__servings-btn recipe-modal__servings-btn--minus" aria-label="Decrease the number of servings by 1">
+                    <i class="bi bi-dash-circle-fill recipe-modal__servings-icn recipe-modal__servings-icn--minus"></i>
+                  </button>
+
+                  <p class="recipe-modal__num-servings">2 servings</p>
+                  <button class="u-icn-btn recipe-modal__servings-btn recipe-modal__servings-btn--plus" aria-label="Increase the number of servings by 1">
+                    <i class="bi bi-plus-circle-fill recipe-modal__servings-icn recipe-modal__servings-icn--plus"></i>
+                  </button>
+                </div>
+              </div>
+
+              <p class="recipe-modal__message recipe-modal__ingredient-message"></p>
+
+              <ul class="recipe-modal__ingredients-container">
+                <!--Dynamically add recipe ingredient entries here-->
+              </ul>
+            </section>
+
+            <section class="recipe-modal__section recipe-modal__section--instructions">
+              <div class="u-flex-space-between recipe-modal__cooking-instructions-header">
+                <h4 class="g-page-subtitle">Instructions</h4>
+                <button class="secondary-btn secondary-btn--less-padding recipe-modal__virtual-assistant-btn" disabled>Virtual Cooking Assistant <span class="recipe-modal__coming-soon">(Coming Soon!)</span></button>
+              </div>
+
+              <ol class="recipe-modal__instructions-container">
+                <!--dynamically add recipe instruction entries here-->
+              </ol>
+            </section>
+
+            <section class="recipe-modal__section recipe-modal__section--nutrition">
+              <h4 class="g-page-subtitle recipe-modal__nutrition-heading">Nutrition</h4>
+
+              <p class="recipe-modal__message recipe-modal__servings-info">
+                Showing nutrition information for
+                <span class="recipe-modal__number-servings"><!--Ex: 2 servings--></span>
+                .
+              </p>
+
+              <div class="recipe-modal__nutrition-content">
+                <div class="recipe-modal__nutrition-summary">
+                  <h5 class="recipe-modal__nutrition-subheading">Nutrient Breakdown</h5>
+                  <ul class="recipe-modal__nutrient-list">
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="saturatedFat">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Saturated Fat:</span>
+                      10g
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="sugar">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Sugar:</span>
+                      30g
+                    --></li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="fiber">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Fiber:</span>
+                      6g
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="sodium">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Sodium:</span>
+                      22mg
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="cholesterol">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Cholesterol:</span>
+                      3mg
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="iron">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Iron:</span>
+                      10mg
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="zinc">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Zinc:</span>
+                      5mg
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="calcium">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Calcium:</span>
+                      10g
+                      -->
+                    </li>
+                    <li class="recipe-modal__nutrition-tidbit" data-nutrient="magnesium">
+                      <!--
+                      <span class="recipe-modal__nutrient-label">Magnesium:</span>
+                      10g
+                      -->
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="recipe-modal__macro-graphs">
+                  <div class="recipe-modal__bar-graph-container">
+                    <h5 class="recipe-modal__nutrition-subheading">Macros (% of DV)</h5>
+                    <!--Macros bar graph-->
+                    <div class="recipe-modal__bar-graph">
+                      <div class="u-flex-space-between recipe-modal__macro-bar" data-macro="protein">
+                        <p class="recipe-modal__macro-value-label">
+                          <span class="recipe-modal__macro-value"><!--Ex: 60g--></span>
+                          Protein
+                        </p>
+                        <div class="recipe-modal__bar-container">
+                          <div class="recipe-modal__bar recipe-modal__bar--protein" style="width: 60%"></div>
+                        </div>
+                        <span class="recipe-modal__macro-percentage"><!--Ex: 60%--></span>
+                      </div>
+                      <div class="u-flex-space-between recipe-modal__macro-bar" data-macro="carbs">
+                        <p class="recipe-modal__macro-value-label">
+                          <span class="recipe-modal__macro-value"><!--Ex: 50g--></span>
+                          Carbs
+                        </p>
+                        <div class="recipe-modal__bar-container">
+                          <div class="recipe-modal__bar recipe-modal__bar--carbs" style="width: 50%"></div>
+                        </div>
+                        <span class="recipe-modal__macro-percentage"><!--Ex: 50%--></span>
+                      </div>
+                      <div class="u-flex-space-between recipe-modal__macro-bar" data-macro="fats">
+                        <p class="recipe-modal__macro-value-label">
+                          <span class="recipe-modal__macro-value"><!--Ex: 30g--></span>
+                          Fats
+                        </p>
+                        <div class="recipe-modal__bar-container">
+                          <div class="recipe-modal__bar recipe-modal__bar--fat" style="width: 30%"></div>
+                        </div>
+                        <span class="recipe-modal__macro-percentage"><!--Ex: 30%--></span>
+                      </div>
+                    </div>
+                  </div>
+                  <!--Macros pie chart-->
+                  <div class="recipe-modal__pie-chart">
+                    <h5 class="recipe-modal__nutrition-subheading">Calorie Composition</h5>
+                    <div class="recipe-modal__pie-chart-container">
+                      <canvas id="nutrientChart" width="200" height="200"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <!--Modal Window #3: Custom Recipe Modal -->
+        <div id="customRecipeModal" class="u-hidden modal-window modal-window--generic custom-recipe-modal">
+          <div class="modal-window__header">
+            <button class="u-icn-btn modal-window__close-modal-btn custom-recipe-modal__close-modal-btn" aria-label="Close modal window">
+              <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+            </button>
+          </div>
+
+          <h3 class="modal-window__heading">Add Custom Recipe</h3>
+
+          <!-- Custom Entry Form  -->
+          <form class="custom-recipe-modal__form">
+            <fieldset class="u-fieldset custom-recipe-modal__recipe-info-section">
+              <legend class="modal-window__subheading">Recipe Information</legend>
+
+              <div class="modal-window__text-input-container">
+                <label for="custom-recipe-name" class="modal-window__text-input-label">Recipe Name:</label>
+                <input type="text" class="modal-window__text-input modal-window__text-input--large custom-recipe-modal__custom-name" id="custom-recipe-name" placeholder="e.g., Margharita Pizza" required />
+              </div>
+
+              <div class="custom-recipe-modal__dropdown-container">
+                <label for="cuisine-dropdown" class="g-visually-hidden">Filter by cuisine:</label>
+                <select id="custom-cuisine-dropdown" class="dropdown dropdown--custom-recipe-modal">
+                  <option value="default" selected>No Specific Cuisine</option>
+                  <option value="Asian">Asian</option>
+                  <option value="American">American</option>
+                  <option value="Cajun">Cajun</option>
+                  <option value="Caribbean">Caribbean</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="European">European</option>
+                  <option value="French">French</option>
+                  <option value="Greek">Greek</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Jewish">Jewish</option>
+                  <option value="Korean">Korean</option>
+                  <option value="Latin-american">Latin American</option>
+                  <option value="Mediterranean">Mediterranean</option>
+                  <option value="Mexican">Mexican</option>
+                  <option value="Middle-eastern">Middle Eastern</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Thai">Thai</option>
+                  <option value="Vietnamese">Vietnamese</option>
+                </select>
+
+                <label for="custom-recipe-meal-type-dropdown" class="g-visually-hidden">Meal type:</label>
+                <select id="custom-recipe-meal-type-dropdown" class="dropdown dropdown--custom-recipe-modal">
+                  <option value="default" selected>No Meal Type</option>
+                  <option value="Main-course">Main Course</option>
+                  <option value="Side-dish">Side Dish</option>
+                  <option value="Dessert">Dessert</option>
+                  <option value="Appetizer">Appetizer</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Lunch">Lunch</option>
+                  <option value="Dinner">Dinner</option>
+                  <option value="Soup">Soup</option>
+                  <option value="Beverage">Beverage</option>
+                  <option value="Snack">Snack</option>
+                </select>
+              </div>
+
+              <div class="mini-input-set custom-recipe-modal__main-mini-inputs">
+                <div class="mini-input-set__input-container">
+                  <label for="custom-cooktime">Cook Time (min):</label>
+                  <input type="number" class="modal-window__text-input" id="custom-cooktime" placeholder="e.g., 20" min="1" max="5000" title="Cook time must be between 1 and 5000 minutes" />
+                </div>
+                <div class="mini-input-set__input-container">
+                  <label for="custom-number-calories">Calories:</label>
+                  <input type="number" class="modal-window__text-input" id="custom-number-calories" placeholder="e.g., 20" min="1" max="10000" title="Number of calories must be between 1 and 10,000 calories" required />
+                </div>
+                <div class="mini-input-set__input-container">
+                  <label for="custom-number-servings">Number of Servings:</label>
+                  <input type="number" class="modal-window__text-input" id="custom-number-servings" placeholder="e.g., 20" min="1" max="50" title="Number of servings must be between 1 and 50" required />
+                </div>
+              </div>
+
+              <div class="custom-recipe-modal__checkbox-section">
+                <p class="custom-recipe-modal__checkbox-prompt">Select Any that Apply:</p>
+                <div class="custom-recipe-modal__checkboxes">
+                  <div class="custom-recipe-modal__checkbox-container">
+                    <input type="checkbox" id="gluten-free" class="custom-recipe-modal__checkbox" name="gluten free" value="gluten free" />
+                    <label for="gluten-free" class="custom-recipe-modal__checkbox-label">Gluten Free</label>
+                  </div>
+                  <div class="custom-recipe-modal__checkbox-container">
+                    <input type="checkbox" id="vegetarian" class="custom-recipe-modal__checkbox" name="vegetarian" value="vegetarian" />
+                    <label for="vegetarian" class="custom-recipe-modal__checkbox-label">Vegetarian</label>
+                  </div>
+                  <div class="custom-recipe-modal__checkbox-container">
+                    <input type="checkbox" id="vegan" class="custom-recipe-modal__checkbox" name="vegan" value="vegan" />
+                    <label for="vegan" class="custom-recipe-modal__checkbox-label">Vegan</label>
+                  </div>
+                  <div class="custom-recipe-modal__checkbox-container">
+                    <input type="checkbox" id="keto" class="custom-recipe-modal__checkbox" name="keto" value="keto" />
+                    <label for="keto" class="custom-recipe-modal__checkbox-label">Keto</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="u-fieldset custom-recipe-modal__ingredient-input-section">
+              <legend class="modal-window__subheading">Ingredients</legend>
+
+              <div class="u-flex-space-between custom-recipe-modal__add-entry-heading">
+                <h4 class="custom-recipe-modal__add-entry-text">Add Ingredient</h4>
+                <button class="u-icn-btn add-entry-btn add-entry-btn--ingredient" aria-label="Add an ingredient">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+
+              <div class="custom-recipe-modal__input-rows custom-recipe-modal__input-rows--ingredients">
+                <div class="u-flex-gap-1rem custom-recipe-modal__input-row">
+                  <p class="custom-recipe-modal__ingredient-qty custom-recipe-modal__ingredient-qty--heading">Quantity</p>
+                  <p class="custom-recipe-modal__ingredient-unit custom-recipe-modal__ingredient-unit--heading">Unit</p>
+                  <p class="custom-recipe-modal__ingredient-name custom-recipe-modal__ingredient-name--heading">Ingredient</p>
+                </div>
+                <div class="u-flex-gap-1rem custom-recipe-modal__input-row custom-recipe-modal__input-row--ingredient">
+                  <label class="g-visually-hidden" for="ingredient-1-qty">Ingredient 1 Qty:</label>
+                  <input type="number" class="custom-recipe-modal__ingredient-qty modal-window__text-input" type="text" id="ingredient-1-qty" placeholder="eg. 1" min="0" required />
+                  <label class="g-visually-hidden" for="ingredient-1-qty-unit">Ingredient 1 quantity unit:</label>
+                  <input class="custom-recipe-modal__ingredient-unit modal-window__text-input" type="text" id="ingredient-1-qty-unit" placeholder="eg. cup" title="Enter a common unit like tsp, tbsp, ml, l, fl oz, pt, qt, g, kg, oz, lb, or count" required />
+                  <label class="g-visually-hidden" for="ingredient-1-name">Ingredient 1 name:</label>
+                  <input class="custom-recipe-modal__ingredient-name modal-window__text-input" type="text" id="ingredient-1-name" placeholder="flour" title="Only letters and spaces are allowed." pattern="[A-Za-z\s]+" required />
+                </div>
+                <!--Additional ingredient input rows are dynamically added here as necessary-->
+              </div>
+            </fieldset>
+
+            <fieldset class="u-fieldset custom-recipe-modal__cooking-instructions-section">
+              <legend class="modal-window__subheading">Cooking Instructions</legend>
+
+              <div class="u-flex-space-between custom-recipe-modal__add-entry-heading">
+                <h4 class="custom-recipe-modal__add-entry-text">Cooking Instructions</h4>
+                <button class="u-icn-btn add-entry-btn add-entry-btn--instruction" aria-label="Add a cooking instruction">
+                  <i class="bi bi-plus-circle-fill add-entry-btn__plus-icn"></i>
+                </button>
+              </div>
+
+              <div class="custom-recipe-modal__input-rows custom-recipe-modal__input-rows--instructions">
+                <div class="u-flex-gap-1rem custom-recipe-modal__input-row custom-recipe-modal__input-row--instruction">
+                  <label class="custom-recipe-modal__step-label" for="step-1">
+                    Step
+                    <span class="custom-recipe-modal__step-number">1</span>
+                  </label>
+                  <input class="modal-window__text-input custom-recipe-modal__instruction-input" id="step-1" type="text" placeholder="eg. Pour broth into pan and cook for 10 minutes." required />
+                </div>
+                <!--Additional instruction rows are dynamically added here as needed-->
+              </div>
+            </fieldset>
+
+            <fieldset class="u-fieldset custom-recipe-modal__nutrition-section">
+              <legend class="modal-window__subheading">Nutrition Information</legend>
+
+              <div class="custom-recipe-modal__main-macros">
+                <h5 class="modal-window__mini-heading">Macros</h5>
+
+                <div class="mini-input-set">
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-protein">Protein (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-protein" placeholder="e.g., 20" min="0" max="1000" title="Value must be between 0 and 1000 grams" required />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-carbs">Carbs (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-carbs" placeholder="e.g., 50" min="0" max="1000" title="Value must be between 0 and 1000 grams" required />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-fats">Fats (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-fats" placeholder="e.g., 10" min="0" max="1000" title="Value must be between 0 and 1000 grams" required />
+                  </div>
+                </div>
+              </div>
+
+              <div class="custom-recipe-modal__optional-inputs">
+                <h5 class="modal-window__mini-heading">Nutrients (optional):</h5>
+
+                <div class="mini-input-set">
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-sat-fat">Saturated Fat (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-sat-fat" placeholder="e.g., 20" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-sugar">Sugar (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-sugar" placeholder="e.g., 50" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-fiber">Fiber (g):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-fiber" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-sodium">Sodium (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-sodium" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-cholesterol">Cholesterol (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-cholesterol" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-iron">Iron (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-iron" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-zinc">Zinc (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-zinc" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-calcium">Calcium (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-calcium" placeholder="e.g., 10" />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-magnesium">Magnesium (mg):</label>
+                    <input type="number" class="modal-window__text-input" id="custom-magnesium" placeholder="e.g., 10" />
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="modal-window__btn-large custom-recipe-modal__submit-btn">Create Custom Meal & Add to Recipe Book</button>
+          </form>
+        </div>
+        <!--Modal Window #4: Add Meal to Slot Modal -->
+        <div id="mealEntryModal" class="u-hidden modal-window modal-window--generic meal-entry-modal">
+          <div class="modal-window__header">
+            <button class="u-icn-btn modal-window__close-modal-btn" aria-label="Close modal window">
+              <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+            </button>
+          </div>
+
+          <h3 class="modal-window__heading">Add a Meal</h3>
+
+          <div class="meal-entry-modal__option-btns">
+            <button class="modal-window__btn-small modal-window__btn-small--selected meal-entry-modal__bookmarks-btn">Select from Bookmarked Recipes</button>
+            <button class="modal-window__btn-small meal-entry-modal__cstm-entry-btn">Create Custom Entry</button>
+          </div>
+
+          <!-- Create Custom Entry Sub-view (hidden by default) -->
+          <section class="custom-entry-form u-hidden">
+            <h4 class="modal-window__subheading">Create Custom Meal</h4>
+
+            <form class="custom-entry-form__container">
+              <fieldset class="u-fieldset custom-entry-form__main-inputs">
+                <div class="modal-window__text-input-container custom-entry-form__meal-name">
+                  <label for="custom-meal-name" class="modal-window__text-input-label">Meal Name:</label>
+                  <input type="text" class="modal-window__text-input modal-window__text-input--large custom-entry-form__meal-name-input" id="custom-meal-name" placeholder="e.g., Ate Out, Leftovers" maxlength="30" required />
+                </div>
+                <div class="modal-window__text-input-container custom-entry-form__meal-calories">
+                  <label for="custom-calories" class="modal-window__text-input-label">Approximate Calories:</label>
+                  <input type="number" class="modal-window__text-input modal-window__text-input--large custom-entry-form__meal-calories-input" id="custom-calories" placeholder="e.g., 500" min="1" max="10000" step="1" required />
+                </div>
+              </fieldset>
+
+              <fieldset class="u-fieldset custom-entry-form__optional-inputs">
+                <legend class="modal-window__mini-heading">Macros:</legend>
+                <div class="mini-input-set">
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-protein">Protein (g):</label>
+                    <input type="number" class="modal-window__text-input custom-entry-form__meal-protein" id="custom-protein" placeholder="e.g., 20" min="1" max="1000" step="1" required />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-carbs">Carbs (g):</label>
+                    <input type="number" class="modal-window__text-input custom-entry-form__meal-carbs" id="custom-carbs" placeholder="e.g., 50" min="1" max="1000" step="1" required />
+                  </div>
+                  <div class="mini-input-set__input-container">
+                    <label for="custom-fats">Fats (g):</label>
+                    <input type="number" class="modal-window__text-input custom-entry-form__meal-fats" id="custom-fats" placeholder="e.g., 10" min="1" max="1000" step="1" required />
+                  </div>
+                </div>
+              </fieldset>
+              <button type="submit" class="modal-window__btn-large custom-entry-form__save-meal-btn">Save Meal</button>
+            </form>
+          </section>
+
+          <!-- Select from Bookmarked Recipes Sub-view -->
+          <section class="select-bookmarked-recipes">
+            <div class="error-message error-message--repeat-recipe"></div>
+            <h4 class="modal-window__subheading">Choose a Recipe from Your Recipe Book</h4>
+            <div class="error-message error-message--no-bookmarked-recipes"></div>
+            <div class="select-bookmarked-recipes__recipe-window">
+              <!--bookmarked recipes are dynamically added here-->
+            </div>
+
+            <form class="select-bookmarked-recipes__form">
+              <div class="u-invisible select-bookmarked-recipes__servings-info">
+                <div class="select-bookmarked-recipes__servings-input">
+                  <label class="modal-window__text-input-label">Number of Servings:</label>
+                  <input type="number" class="modal-window__text-input select-bookmarked-recipes__servings-input-field" min="1" max="50" step="1" />
+                </div>
+                <div class="select-bookmarked-recipes__nutrition-info">
+                  <p class="select-bookmarked-recipes__calories-info">
+                    Calories:
+                    <span class="select-bookmarked-recipes__calories"><!--Ex:25 calories--></span>
+                  </p>
+                  <p class="select-bookmarked-recipes__protein-info">
+                    Protein:
+                    <span class="select-bookmarked-recipes__protein"><!--Ex:25g--></span>
+                  </p>
+                  <p class="select-bookmarked-recipes__carbs-info">
+                    Carbs:
+                    <span class="select-bookmarked-recipes__carbs"><!--Ex:25g--></span>
+                  </p>
+                  <p class="select-bookmarked-recipes__fats-info">
+                    Fats:
+                    <span class="select-bookmarked-recipes__fats"><!--Ex:25g--></span>
+                  </p>
+                </div>
+              </div>
+
+              <button class="u-invisible modal-window__btn-large select-bookmarked-recipes__add-meal-btn">Add Meal</button>
+            </form>
+          </section>
+        </div>
+        <!--Modal Window #5: Filter Recipes Modal -->
+        <div id="filterRecipesModal" class="u-hidden modal-window modal-window--generic filter-recipes-modal">
+          <div class="modal-window__header">
+            <button class="u-icn-btn modal-window__close-modal-btn filter-recipes-modal__close-modal-btn" aria-label="Close modal window">
+              <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+            </button>
+          </div>
+
+          <div class="u-flex-space-between filter-recipes-modal__header">
+            <h3 class="modal-window__heading">Filter Recipes</h3>
+            <button class="modal-window__btn-small g-reset-btn">Reset Filters</button>
+          </div>
+
+          <form class="filter-recipes-modal__filters">
+            <fieldset class="u-fieldset filter-recipes-modal__filters-container">
+              <label for="dietary-restriction-filter--filter-recipes" class="g-visually-hidden">Filter by dietary restriction:</label>
+              <select id="dietary-restriction-filter--filter-recipes" class="dropdown" data-description="dietary-restriction-filter">
+                <option value="default" selected>No Dietary Restrictions</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="keto">Keto</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+              </select>
+
+              <label for="cook-time-filter--filter-recipes" class="g-visually-hidden">Filter by cook time:</label>
+              <select id="cooking-time-filter--filter-recipes" class="dropdown" data-description="cooking-time-filter">
+                <option value="default" selected>No Cook Time Restriction</option>
+                <option value="30">Under 30 min</option>
+                <option value="45">Under 45 min</option>
+                <option value="60">Under 1 hour</option>
+                <option value="120">Under 2 hours</option>
+              </select>
+            </fieldset>
+
+            <button class="modal-window__btn-large modal-window__submit-btn filter-recipes-modal__apply-filters-btn">Apply Filters</button>
+          </form>
+        </div>
+        <!--Modal Window #6: Browse Collection Modal -->
+        <div id="browseCollectionModal" class="u-hidden modal-window modal-window--generic browse-collection-modal">
+          <div class="modal-window__header">
+            <button class="u-icn-btn modal-window__close-modal-btn browse-collection-modal__close-modal-btn" aria-label="Close modal window">
+              <i class="bi bi-x-lg modal-window__close-modal-icn"></i>
+            </button>
+          </div>
+
+          <div class="u-flex-space-between browse-collection-modal__header">
+            <h3 class="modal-window__heading">Browse Recipe Collection</h3>
+            <button class="modal-window__btn-small g-reset-btn">Reset Filters</button>
+          </div>
+
+          <form class="browse-collection-modal__filters">
+            <fieldset class="u-fieldset browse-collection-modal__filters-container">
+              <label for="cuisine-filter--browse-collection" class="g-visually-hidden">Filter by cuisine:</label>
+              <select id="cuisine-filter--browse-collection" class="dropdown" data-description="cuisine-filter">
+                <option value="default" selected>Any Cuisine</option>
+                <option value="asian">Asian</option>
+                <option value="american">American</option>
+                <option value="cajun">Cajun</option>
+                <option value="caribbean">Caribbean</option>
+                <option value="chinese">Chinese</option>
+                <option value="european">European</option>
+                <option value="french">French</option>
+                <option value="greek">Greek</option>
+                <option value="indian">Indian</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="jewish">Jewish</option>
+                <option value="korean">Korean</option>
+                <option value="latin american">Latin American</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="mexican">Mexican</option>
+                <option value="middle-eastern">Middle Eastern</option>
+                <option value="spanish">Spanish</option>
+                <option value="thai">Thai</option>
+                <option value="vietnamese">Vietnamese</option>
+              </select>
+
+              <label for="dietary-restriction-filter--browse-collection" class="g-visually-hidden">Filter by dietary restriction:</label>
+              <select id="dietary-restriction-filter--browse-collection" class="dropdown" data-description="dietary-restriction-filter">
+                <option value="default" selected>No Dietary Restrictions</option>
+                <option value="gluten free">Gluten Free</option>
+                <option value="keto">Keto</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+              </select>
+
+              <label for="macro-restriction-filter--browse-collection" class="g-visually-hidden">Filter by macro restrictions:</label>
+              <select id="macro-restriction-filter--browse-collection" class="dropdown" data-description="macro-restriction-filter">
+                <option value="default" selected>No Nutrition Requirement</option>
+                <option value="550">Low Calorie</option>
+                <option value="30">High Protein</option>
+              </select>
+
+              <label for="meal-type-filter--browse-collection" class="g-visually-hidden">Filter by meal type:</label>
+              <select id="meal-type-filter--browse-collection" class="dropdown" data-description="meal-type-filter">
+                <option value="default" selected>Any Meal Type</option>
+                <option value="main course">Main Course</option>
+                <option value="side dish">Side Dish</option>
+                <option value="dessert">Dessert</option>
+                <option value="appetizer">Appetizer</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="soup">Soup</option>
+                <option value="beverage">Beverage</option>
+                <option value="snack">Snack</option>
+              </select>
+
+              <label for="cook-time-filter--browse-collection" class="g-visually-hidden">Filter by cook time:</label>
+              <select id="cooking-time-filter--browse-collection" class="dropdown" data-description="cooking-time-filter">
+                <option value="default" selected>No Cook Time Restriction</option>
+                <option value="30">Under 30 min</option>
+                <option value="45">Under 45 min</option>
+                <option value="60">Under 1 hour</option>
+                <option value="120">Under 2 hours</option>
+              </select>
+            </fieldset>
+
+            <button class="modal-window__btn-large modal-window__submit-btn browse-collection-modal__apply-filters-btn">Browse Recipes</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__left-text">
+          <img class="footer__logo" src="images/official_smartSpoon_logo-removebg.png" alt="SmartSpoon logo" />
+          <p class="footer__copyright-text">&copy; 2024 SmartSpoon. All rights reserved.</p>
+        </div>
+        <div class="u-flex-gap-1rem footer__links">
+          <a href="coming-soon.html" class="footer__link">Terms of Service</a>
+          <a href="coming-soon.html" class="footer__link">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/controllers/initController.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

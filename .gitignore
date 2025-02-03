@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+
+# Parcel Cache
+.parcel-cache/
+
+# Build output
+dist/
+
+# Environment files (contain sensitive info like API keys)
+.env
+
+# Log files
+*.log
