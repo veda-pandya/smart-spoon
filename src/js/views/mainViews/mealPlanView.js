@@ -3,7 +3,7 @@
  * It handles rendering the calendar, meals, and nutrition data, as well as event listeners for
  * user actions like adding, moving, and removing meals, and navigating weeks.
  */
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 import * as sharedUtils from "../../sharedUtils.js";
 

@@ -2,7 +2,7 @@
  * @fileoverview BrowseRecipesView is a child of SearchableView. It manages the UI and interactions
  * for browsing and filtering recipes on the Browse Recipes page.
  */
-import SearchableView from "./SearchableView.js";
+import SearchableView from "./searchableView.js";
 
 class BrowseRecipesView extends SearchableView {
   /**

@@ -9,7 +9,7 @@
  * Extends ModalView for shared modal functionality.
  */
 
-import ModalView from "./ModalView.js";
+import ModalView from "./modalView.js";
 
 //Import utilities
 import { getInputValue } from "../viewUtils/highLevel/viewUtils.js";

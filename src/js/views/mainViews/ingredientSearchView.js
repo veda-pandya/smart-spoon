@@ -3,7 +3,7 @@
  * It handles displaying pantry items, common ingredients, and scrolling to suggested recipes.
  * It also manages event listeners for user actions like searching, adding, or removing ingredients.
  */
-import SearchableView from "./SearchableView.js";
+import SearchableView from "./searchableView.js";
 
 class IngredientSearchView extends SearchableView {
   /**

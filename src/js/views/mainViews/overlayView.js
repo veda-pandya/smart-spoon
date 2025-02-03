@@ -2,7 +2,7 @@
  * @fileoverview OverlayView manages the modal overlay UI, providing a base for showing and hiding the overlay (when modal windows are opened and closed).
  
  */
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 class OverlayView extends BaseView {
   /**

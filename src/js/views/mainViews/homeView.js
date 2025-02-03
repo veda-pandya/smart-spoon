@@ -4,7 +4,7 @@
  * and call-to-action (CTA) buttons.
  */
 
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 class HomeView extends BaseView {
   /**

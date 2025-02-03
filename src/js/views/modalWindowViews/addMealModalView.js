@@ -4,7 +4,7 @@
  * Extends ModalView for shared modal functionality.
  */
 
-import ModalView from "./ModalView.js";
+import ModalView from "./modalView.js";
 
 class AddMealModalView extends ModalView {
   /**

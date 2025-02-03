@@ -5,7 +5,7 @@
  * browse recipe collection modal and filter modal.
  */
 
-import ModalView from "./ModalView.js";
+import ModalView from "./modalView.js";
 
 class FilterModalView extends ModalView {
   /**

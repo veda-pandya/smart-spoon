@@ -3,7 +3,7 @@
  * It manages the search bar, autocomplete suggestions, loading spinner, and related user interactions.
  */
 
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 class SearchableView extends BaseView {
   /**

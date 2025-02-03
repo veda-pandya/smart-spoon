@@ -9,7 +9,7 @@
  * - Managing accessibility features for dropdown items.
  */
 
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 class NavBarView extends BaseView {
   constructor() {

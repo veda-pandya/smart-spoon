@@ -4,7 +4,7 @@
  * and the addition of custom recipes.
  */
 
-import BaseView from "./BaseView.js";
+import BaseView from "./baseView.js";
 
 class RecipeBookView extends BaseView {
   /**
