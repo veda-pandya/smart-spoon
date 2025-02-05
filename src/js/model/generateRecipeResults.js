@@ -26,6 +26,9 @@ import { normalizeIngredient, deepCopy, toTitleCase } from "../sharedUtils.js";
 //Import variables from config file
 import { API_BASE_URL, API_KEY, RECOMMENDED_PROTEIN_DV, RECOMMENDED_FATS_DV, RECOMMENDED_CARBS_DV, COMMON_PANTRY_ITEMS, INGREDIENT_SYNONYMS } from "../config.js";
 
+//Import custom recipe image
+import customRecipeImage from "../../images/custom-recipe-image.avif";
+
 //LOAD RECIPE DETAILS FROM API & GENERATE RECIPE OBJECTS
 
 /**
@@ -151,7 +154,7 @@ const createRecipeObject = function (recipe, mode) {
 
   return new Recipe(
     toTitleCase(recipe.title),
-    recipe.image || "images/custom-recipe-image.avif",
+    recipe.image || customRecipeImage,
     recipe.id,
     isBookmarked,
     recipe.dishTypes[0] || "Unavailable",
