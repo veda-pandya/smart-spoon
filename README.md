@@ -1,8 +1,12 @@
 # SmartSpoon
 
+## Live Demo
+
+[Click here to view the live demo of Smart Spoon](https://smart-spoon.netlify.app/#)
+
 ## Project Overview
 
-This meal planning and recipe management app helps users browse a wide range of recipes by either selecting ingredients they already have at home or based on specific preferences such as dietary needs, cuisine, and meal type. The app empowers users to stay organized by creating personalized meal plans, tracking nutrition goals, and minimizing food waste by making use of available ingredients. It provides an intuitive interface to manage meal prep while promoting sustainable cooking practices and a healthy lifestyle.
+Smart Spoon is a meal planning and recipe management app designed to help busy individuals stay healthy and organized. Inspired by the challenge of cooking for one—where you often end up with extra ingredients that go unused—Smart Spoon helps you make the most of what you already have by suggesting recipes that use up those leftovers. Whether you want to choose ingredients you already have or explore new recipes based on your dietary preferences, meal types, or cuisine, the app offers personalized suggestions. It also tracks your nutrition goals and reduces food waste, all while promoting sustainable cooking practices and a healthy lifestyle. With an intuitive interface, Smart Spoon makes meal prep easier, healthier, and more efficient for anyone juggling a busy schedule.
 
 ## Key Features
 
