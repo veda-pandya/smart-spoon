@@ -225,10 +225,6 @@ body {
   display: block;
 }
 
-.u-short {
-  display: none;
-}
-
 /*BEM Block: Primary Button*/
 
 .primary-btn {
@@ -2359,14 +2355,6 @@ body {
   }
 
   .custom-recipe-modal__step-number {
-    display: none;
-  }
-
-  .u-short {
-    display: block;
-  }
-
-  .u-long {
     display: none;
   }
 }

@@ -117,8 +117,8 @@ const renderMealExistsError = function () {
 const controlDatePickerChange = function (dateString) {
   //Get recipe titles in all meal slots for the day
   const mealEntryNames = model.getMealTimeRecipeNames(dateString);
-  //Configure the meal dropdown with the recipe titles
-  AddRecipeModal.configureMealDropdown(mealEntryNames);
+  //Configure the meal dropdown with appropriate dropdown options and the recipe titles
+  AddRecipeModal.updateDropdownOptions(mealEntryNames);
   //Reveal dropdown
   AddRecipeModal.toggleMealDropdownVisibility();
 };

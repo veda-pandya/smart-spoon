@@ -91,12 +91,47 @@ class AddRecipeModal extends AddMealModalView {
   }
 
   /**
+   * Updates the dropdown options in the meal dropdown based on screen size
+   * Shows shorter options for small screen sizes, longer options (include current meals info) for larger screens
+   *
+   * @param {Object} mealEntriesObject - Object containing meal titles for each meal slot on a given day.
+   */
+  updateDropdownOptions(mealEntriesObject) {
+    const isSmallScreen = window.innerWidth < 550;
+    const selectElement = document.getElementById("meal-time-select");
+
+    // Remove all existing options before updating
+    selectElement.innerHTML = "";
+
+    if (isSmallScreen) {
+      // Append only short options
+      selectElement.innerHTML = `
+        <option value="breakfast" class="u-short">Breakfast</option>
+        <option value="lunch" class="u-short">Lunch</option>
+        <option value="snacks" class="u-short">Snack</option>
+        <option value="dinner" class="u-short">Dinner</option>
+      `;
+    } else {
+      // Append only long options with placeholders
+      selectElement.innerHTML = `
+        <option value="breakfast" class="u-long add-recipe-modal__breakfast-dropdown-option"></option>
+        <option value="lunch" class="u-long add-recipe-modal__lunch-dropdown-option"></option>
+        <option value="snacks" class="u-long add-recipe-modal__snacks-dropdown-option"></option>
+        <option value="dinner" class="u-long add-recipe-modal__dinner-dropdown-option"></option>
+      `;
+
+      // Call configureMealDropdown to update text for .u-long options
+      this.#configureMealDropdown(mealEntriesObject);
+    }
+  }
+
+  /**
    * Configures the meal dropdown on the modal when the date input is modified.
    * The dropdown shows the current meals in each meal slot for the date that is selected
    *
    * @param {Object} mealEntriesObject - Object containing meal titles for each meal slot on a given day.
    */
-  configureMealDropdown(mealEntriesObject) {
+  #configureMealDropdown(mealEntriesObject) {
     const mealTimes = [
       { type: "breakfast", label: "Breakfast" },
       { type: "lunch", label: "Lunch" },
@@ -106,7 +141,7 @@ class AddRecipeModal extends AddMealModalView {
 
     mealTimes.forEach(({ type, label }) => {
       const dropdownOption = this.parentEl.querySelector(`.add-recipe-modal__${type}-dropdown-option`);
-      dropdownOption.textContent = `${label} (Current: ${mealEntriesObject[type]}`;
+      if (dropdownOption) dropdownOption.textContent = `${label} (Current: ${mealEntriesObject[type]})`;
     });
   }
 
