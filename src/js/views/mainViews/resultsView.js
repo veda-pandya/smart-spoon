@@ -4,6 +4,9 @@
  * It also provides handlers for interacting with the recipe cards (actions like bookmarking, adding to the planner, and opening recipes).
  */
 
+//Import default recipe image
+import defaultRecipeImage from "../../../images/custom-recipe-image.avif";
+
 class ResultsView {
   /**
    * Creates an instance of ResultsView.
@@ -85,7 +88,7 @@ class ResultsView {
   #generateCardMarkup(recipe, source) {
     return `
             <li class="recipe-card" data-id=${recipe.id} data-source=${source}>
-                  <img class="recipe-card__img" src="${recipe.origin === "user" ? "images/custom-recipe-image.avif" : recipe.image}" alt="${recipe.origin === "user" ? "custom recipe icon" : recipe.title}" />;
+                  <img class="recipe-card__img" src="${recipe.origin === "user" ? defaultRecipeImage : recipe.image}" alt="${recipe.origin === "user" ? "custom recipe icon" : recipe.title}" />;
                   <div class="recipe-card__text">
                     <div class="recipe-card__top-text">
                       <h3 class="recipe-card__title">

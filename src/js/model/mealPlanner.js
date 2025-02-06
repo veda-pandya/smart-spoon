@@ -37,6 +37,9 @@ import { getRecipe, getDayMealPlan, getMondayOfTheWeek } from "./modelUtils/high
 import { adjustServings } from "./modelUtils/featureSpecific/servingsUtils.js";
 import { createSortedDateStrArr, generateUniqueId, deepCopy } from "../sharedUtils.js";
 
+//Import default recipe image
+import defaultRecipeImage from "../../images/custom-recipe-image.avif";
+
 //UPDATE CALENDAR WEEK
 
 /**
@@ -171,7 +174,7 @@ const createCustomRecipeObject = function (customEntryInputsObject) {
 
   return new Recipe(
     mealName,
-    "images/custom-recipe-image.avif",
+    defaultRecipeImage,
     generateUniqueId(),
     false,
     "Unavailable",

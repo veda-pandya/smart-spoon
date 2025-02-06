@@ -40,6 +40,9 @@ import { deepCopy, generateUniqueId } from "../sharedUtils.js";
 //Import variables from config file
 import { RECOMMENDED_PROTEIN_DV, RECOMMENDED_FATS_DV, RECOMMENDED_CARBS_DV } from "../config.js";
 
+//Import default recipe image
+import defaultRecipeImage from "../../images/custom-recipe-image.avif";
+
 //Retrieves the IDs of all recipes in the recipe book.
 export const getRecipeBookIds = function () {
   return state.recipeBook.map((recipe) => recipe.id);
@@ -79,7 +82,7 @@ export const addCustomRecipeToRecipeBook = function (newRecipe) {
 
   const novelRecipe = new Recipe(
     newRecipe.title,
-    "images/custom-recipe-image.avif",
+    defaultRecipeImage,
     generateUniqueId(),
     true,
     newRecipe.mealType !== "default" ? newRecipe.mealType : "Unavailable",
