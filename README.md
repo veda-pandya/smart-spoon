@@ -8,25 +8,20 @@ Smart Spoon is a meal planning and recipe management app designed to help busy i
 
 ## Screenshots
 
-### 🏠 Home Page
-
 ![Home Page](src/images/home-page.png)
-
-### 🗓️ Meal Planner View
 
 ![Meal Planner](src/images/meal-planner.png)
 
-### 🔍 Recipe Search
+<details>
+<summary>Click to view more screenshots</summary>
 
-![Recipe Search](src/images/recipe-search.png)
+![Browse Recipe Search](src/images/browse-recipes.png)
 
-### 🍎 Ingredient Search
+![Ingredient Based Search](src/images/ingredient-search.png)
 
-![Ingredient Search](src/images/browse-recipes.png)
+![Nutrition Info](src/images/nutrition-panel.png)
 
-### 🔬 Nutrition Details
-
-![Nutrition Details](src/images/nutrition-panel.png)
+</details>
 
 ## Key Features
 
